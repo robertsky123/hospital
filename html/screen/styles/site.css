@@ -1,0 +1,494 @@
+﻿/*--reset css--*/
+html, body, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+html {
+  background: #fff;
+  color: #000;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+q:before,
+q:after, blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+ul,ol,li {
+  list-style: none;
+  list-style-image: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+small {
+  font-size: 80%;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+  white-space: normal;
+  *margin-left: -7px;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible;
+}
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/*cell style*/
+.fix {
+  *zoom: 1;
+}
+
+.fix:before,
+.fix:after {
+  content: " ";
+  display: table;
+}
+
+.fix:after {
+  clear: both;
+}
+
+.fl {
+  float: left;
+  display: inline;
+}
+
+.fr {
+  float: right;
+  display: inline;
+}
+
+.fl_l {
+  float: left;
+  display: inline;
+  _margin-right: -3px;
+}
+
+.fl_r {
+  float: right;
+  display: inline;
+  _margin-left: -3px;
+}
+
+.suit {
+  display: table-cell;
+  width: 2000px;
+  *width: auto;
+  *display: inline-block;
+}
+
+.autfit {
+  overflow: hidden;
+  _overflow: visible;
+  _zoom: 1;
+}
+
+/*default element style*/
+input:focus, textarea:focus {
+  outline: none;
+}
+
+body,
+pre,
+button,
+input,
+select,
+textarea {
+  /*\5FAE\8F6F\96C5\9ED1=microsoft yahei,\5b8b\4f53=song ti*/
+  font-family: Tahoma,Arial,\5b8b\4f53;
+}
+
+body {
+  font-size: 12px;
+  line-height: 1.5;
+  font-family: "Microsoft Yahei";
+}
+
+/*pgheader begin*/
+.pgheader{
+  height: 82px;
+  background: url(../images/headerbg.png) 0 0 repeat-x;
+}
+.pgheader .contain{
+    position: relative;
+  }
+.pgheader__name{
+  background: url(../images/headtitleft.png) 0 -4px no-repeat;
+  padding-left:58px;
+}
+.pgheader__namebox{
+  background: url(../images/headtitlright.png) right -4px no-repeat;
+  padding-right: 55px;
+}
+.pgheader__nameinner{
+  height: 88px;
+  line-height: 80px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+  background: url(../images/headtitlerepeat.png) 0 -4px repeat-x;
+}
+.pgheader__date{
+  position: absolute;
+  right:280px;
+  top:20px;
+  color: #000;
+  font-size: 24px;
+}
+.pgheader__time{
+  position: absolute;
+  right: 0;
+  top: 10px;
+  width:232px;
+  height: 60px;
+  line-height: 60px;
+  background: url(../images/timerbg.png) 0 0 no-repeat;
+  color: #fff;
+  font-family: 'Arial';
+  font-weight: bold;
+  font-size: 34px;
+}
+.pgheader__time span{
+  margin-left: 80px;
+}
+/*pgheader end*/
+
+/*pgbody b8egin*/
+
+.pgbodybox{
+  min-height: 628px;
+  background:url(../images/outrepeat.png) 0 0 repeat-x;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius:10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
+  margin: 0 2px;
+  padding: 6px 8px 0;
+}
+.pgbodyinner{
+  min-height: 603px;
+   background:url(../images/innereapeat.png) 0 0 repeat-x;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius:10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+.pgbodymainbox{
+  padding: 5px;
+  min-height: 593px;
+  background: #fff;
+}
+/*pgbodybox end*/
+
+/*roadstate begin*/
+.roadstate{
+  position: relative;
+  height: 115px;
+  padding:0 60px;
+}
+.roadstate_beginicon,.roadstate_endicon{
+top: 50px;
+position: absolute;
+width: 50px;
+height: 47px;
+background: url(../images/buildicon.png) 0 0 no-repeat;
+}
+.roadstate_beginicon{
+  left: 2px;
+}
+.roadstate_endicon{
+  right: 2px;
+}
+.roadstate_box,.roadstate_inner,.roadstate_steps,.roadstate_steps li{
+   height: 115px;
+}
+.roadstate_box{
+  padding-left: 9px;
+  background: url(../images/rbarleft.png) 0 72px  no-repeat;
+}
+.roadstate_inner{
+  padding-right: 8px;
+  background: url(../images/rbarright.png) right 72px no-repeat;
+}
+.roadstate_steps{
+  background:url(../images/rbarreapeat.png) 0  72px repeat-x;
+  padding-right: 15px;
+}
+.roadstate_steps li{
+  float: left;
+}
+.roadstate_step1{
+  width: 20%;
+}
+.roadstate_step2{
+width: 30%;
+text-align: center;
+}
+.roadstate_step3{
+width: 30%;
+text-align: center;
+}
+.roadstate_step4{
+width: 20%;
+text-align: right;
+}
+.roadstate_step1 .roadstate_state{
+  background-image: url(../images/step1icon.png);
+  background-position: 15px 58px;
+}
+.roadstate_step2 .roadstate_state{
+  background-image: url(../images/step2icon.png);
+  background-position: center 58px;
+}
+.roadstate_step3 .roadstate_state{
+  background-image: url(../images/step3icon.png);
+  background-position: center 58px;
+}
+.roadstate_step4 .roadstate_state{
+  background-image: url(../images/step4icon.png);
+  background-position: right 58px;
+}
+.roadstate_nowstate{
+  height: 115px;
+  background: url(../images/ambulance.png) center 42px no-repeat;
+}
+.roadstate_step1 .roadstate_nowstate{
+  background-position: 15px 42px;
+}
+.roadstate_step4 .roadstate_nowstate{
+  background-position: right 42px;
+}
+.roadstate_state{
+  height: 115px;
+  background-repeat: no-repeat;
+}
+.roadstate_txt1{
+  color: #000;
+  font-size: 22px;
+  line-height: 50px;
+}
+.roadstate_txt2{
+  color: #0099ff;
+  font-size: 22px;
+  line-height: 50px;
+}
+.roadstate_txt3{
+ color: #0099ff;
+  font-size: 18px;
+ margin-top: 40px;
+}
+/*roadstate end*/
+/*table begin*/
+.emergencydatas{
+  margin-top: 10px;
+}
+.emergencydatas--2column{
+  padding-right:5px;
+}
+.emergencydatas .emergencydatas_table--sectable{
+  display: none;
+}
+.emergencydatas--2column .emergencydatas_table{
+  width:50%;
+  float: left;
+}
+.emergencydatas--2column .emergencydatas_table--sectable{
+  margin-right: -5px;
+  float: right;
+    display: block;
+}
+.table
+{
+  border: 4px solid #26a9e0;
+  border-top: 0;
+  font-size: 20px;
+  text-indent: 15px;
+  width: 100%;
+}
+.table td
+{
+  border-color: #26a9e0;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  height: 50px;
+  line-height: 1;
+}
+.table__hd td{
+ color: #fff;
+  height: 52px;
+  background: url(../images/tbhdbg.png) 0 0 repeat-x;
+}
+.table .table_rowstd{
+  line-height:55px;
+}
+.emergencydatas--2column .table_rowstd{
+  line-height: 1.5;
+}
+/*table end*/
+/*pgfooter begin*/
+.pgfooter{
+  height: 53px;
+  background:#26a9e0 url(../images/pgfooter.png) 0 0 repeat-x;
+}
+.paginations{
+  text-align: center;
+  font-size: 25px;
+  color: #fff;
+  line-height: 50px;
+}
+/*pgfooter end*/

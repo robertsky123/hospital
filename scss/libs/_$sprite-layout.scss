@@ -1,0 +1,26 @@
+﻿//只有在使用智能排版$dpr2-layout:smart;时需要@import
+$dpr2-spacing: 1px;
+$dpr2-sprite-dimensions: true;
+$dpr2-layout:smart;
+@import "dpr2/*.png";
+@mixin dpr2sp($map2x,$x:0,$y:0,$resize:0,$w:0,$h:0){
+	$dimend:sprite-file($dpr2-sprites, #{$map2x});
+	$position: sprite-position($dpr2-sprites, #{$map2x});
+	@extend .dpr2-sprite ;
+	@if $resize==1{
+		width:$w;
+		height:$h;
+	}@else{
+		width:image-width($dimend);
+		width:image-height($dimend);
+	}
+	background-position: nth($position, 1)+$x nth($position, 2)+$y;
+	
+}
+
+ a{
+ @include dpr2sp(back_larrow);
+}
+.hk{
+@include dpr2sp(select_icon_active);
+}

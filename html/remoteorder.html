@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="emy-subapp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>远程应急指挥系统</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link href="css/substyle.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    	var Emy=Emy||{};
+    	//弹出菜单
+    	Emy.popMenu=(function(){
+    		var nowDataId;//当前点击弹出车辆的id
+    		function enableWindow(){//可用的屏幕
+    			var popwindows=$(".emy-rodcars").data("windows").split(",");//可用的屏幕
+    			$(".emy-rodpopacts_pop2").find(".emy-rodpopacts_wlink").each(function(elementindex){
+    						var enable=false;
+    						$.each(popwindows, function( index, value ) {
+						 		if(elementindex==index){
+						 			enable=true;
+						 		}
+							});
+							if(!enable){
+								$(this).addClass("emy-rodpopacts_wlink--disabled");
+							}
+    					});
+    		}
+    		function listClick(){//点击列表弹出一级菜单
+    			$(".emy-rodcars").on("click",".emy-rodcars_bd",function(){
+    				nowDataId=$(this).data("id");
+    				if($(this).hasClass("emy-rodcars_bd--active")){
+    					$(".emy-rodpopacts").hide();
+    					$(".emy-rodpopacts").find(".emy-rodpopacts_pop2").hide();
+    					$(this).removeClass("emy-rodcars_bd--active");
+    				}
+    				else{
+    					$(".emy-rodcars_bd").removeClass("emy-rodcars_bd--active");
+    					$(this).addClass("emy-rodcars_bd--active");
+    					var nowleft=$(this).offset().left+$(this).outerWidth()-25;
+    					var nowtop=$(this).offset().top-20;
+    					$(".emy-rodpopacts").css({left:nowleft,top:nowtop});
+    					$(".emy-rodpopacts").find(".emy-rodpopacts_pop2").hide();
+    					$(".emy-rodpopacts_windowlink").removeClass("emy-rodpopacts_windowlink--active");
+    					$(".emy-rodpopacts").show();
+    				}
+    			});
+    		}
+
+    		function winpopClick(){//二级窗口选择菜单
+    			$(".emy-rodpopacts").on("click",".emy-rodpopacts_windowlink",function(event){
+    				event.preventDefault();
+    				if($(this).hasClass("emy-rodpopacts_windowlink--active")){
+    					$(".emy-rodpopacts_pop2").hide();
+    					$(this).removeClass("emy-rodpopacts_windowlink--active");
+    				}
+    				else{
+    					$(".emy-rodpopacts_windowlink").removeClass("emy-rodpopacts_windowlink--active");
+    					$(this).addClass("emy-rodpopacts_windowlink--active");
+    					$(".emy-rodpopacts_pop2").appendTo($(this).parent(".emy-rodpopacts_mlist"));
+    					$(".emy-rodpopacts_pop2").show();
+    				}
+    			});
+    		}
+
+    		function checkMenu(){//checkbox选中
+    			$(".emy-rodcars").on("click",".emy-iconcarok",function(event){
+    				event.preventDefault();
+    				if($(this).hasClass("emy-iconcarok--checked"))
+    				{
+    					$(this).removeClass("emy-iconcarok--checked");
+    				}
+    				else{
+    					$(this).addClass("emy-iconcarok--checked");
+    				}
+    			});
+    		}
+
+    		return {
+    			init:function(){
+    				enableWindow();
+    				listClick();
+    				winpopClick();
+    				checkMenu();
+    			}
+    		}
+    	})();
+    	$(function(){
+    		Emy.popMenu.init();//初始化
+    	});
+    </script>
+</head>
+<body>
+	<!-- 弹出操作链接 开始 -->
+	<div class="emy-rodpopacts">
+		<div class="emy-rodpopacts_pop1">
+			<ul class="emy-rodpopacts_lists">
+				<!--emy-rodpopacts_mlink主链接，emy-rodpopacts_windowlink窗口图标链接-->
+				<li class="emy-rodpopacts_mlist emy-rodpopacts_fmlist">
+					<a class="emy-rodpopacts_mlink" href="">查看病历</a><a class="emy-rodpopacts_windowlink" href="javascript:;"></a>
+				</li>
+				<li class="emy-rodpopacts_mlist">
+					<a class="emy-rodpopacts_mlink" href="">查看波形</a><a class="emy-rodpopacts_windowlink" href="javascript:;"></a>
+				</li>
+				<li class="emy-rodpopacts_mlist emy-rodpopacts_lastmlist">
+					<a class="emy-rodpopacts_mlink" href="">远程指挥</a><a class="emy-rodpopacts_windowlink" href="javascript:;"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 屏幕数字弹框 -->
+	<div class="emy-rodpopacts_pop2">
+		<div class="emy-rodpopacts_windows">
+			<ul class="emy-rodpopacts_windowlists">
+				<li><a class="emy-rodpopacts_wlink" href="">1</a></li>
+				<li><a class="emy-rodpopacts_wlink" href="">2</a></li>
+				<li><a class="emy-rodpopacts_wlink" href="">3</a></li>
+				<li><a class="emy-rodpopacts_wlink" href="">4</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 弹出操作链接 结束 -->
+	<!-- 头部框架 -->
+	<div class="emy-pgheader fix">
+		<a href="#" class="emy-pgheader__log">应急指挥系统</a>
+		<a href="" class="emy-bigcancel-btn"></a>
+	</div>
+	<div class="emy-mainwrap fix">
+		<!-- 左侧导航栏框架 -->
+		<div class="emy-sidebar fl" style="overflow:scroll;width:250px;border-right: 8px solid #3495db;background:#3495db;">
+			<div class="emy-sdmenu">
+				<h2 class="emy-sdmenu_title">任务车辆</h2>
+			</div>
+			<!-- 把可用的屏幕用程序赋值放在这里的data-windwos里 -->
+			<ul class="emy-rodcars"  data-windows="1,2,3">
+				<!-- 循环列表 -->
+				<li class="emy-rodcars_list">
+					<div class="emy-rodcars_hd">
+						<a href="" class="emy-iconcarok"></a>
+						<a href="" class="emy-iconloacate"></a>
+					</div>
+					<div class="emy-rodcars_bd" data-id="1">
+						<div class="emy-rodcars_line">
+							<span class="emy-rodcars_ltxt">08-02</span>
+							<span class="emy-rodcars_rtxt">回院途中</span>
+						</div>
+						<div class="emy-rodcars_line">
+							<span class="emy-rodcars_ltxt">13013013000</span>
+							<span class="emy-rodcars_rtxt">张护士</span>
+						</div>
+						<div class="emy-rodcars_line">
+							<span class="emy-rodcars_ltxt">*王医生</span>
+							<span class="emy-rodcars_rtxt">李师傅</span>
+						</div>
+					</div>
+				</li>
+				<li class="emy-rodcars_list">
+					<div class="emy-rodcars_hd">
+						<a href="" class="emy-iconcarok"></a>
+						<a href="" class="emy-iconloacate"></a>
+					</div>
+					<div class="emy-rodcars_bd" data-id="2">
+						<div class="emy-rodcars_line">
+							<span class="emy-rodcars_ltxt">08-02</span>
+							<span class="emy-rodcars_rtxt">回院途中</span>
+						</div>
+						<div class="emy-rodcars_line">
+							<span class="emy-rodcars_ltxt">13013013000</span>
+							<span class="emy-rodcars_rtxt">张护士</span>
+						</div>
+						<div class="emy-rodcars_line">
+							<span class="emy-rodcars_ltxt">*王医生</span>
+							<span class="emy-rodcars_rtxt">李师傅</span>
+						</div>
+					</div>
+
+				</li>
+
+				
+				
+			</ul>
+			<div class="emy-rodlogout">
+				<a href="" class="emy-blgraybtn">退  出</a>
+			</div>
+		</div>
+		<!-- 右侧主内容框架 -->
+		<div class="autfit emy-mainwrapper">
+			<ul class="emy-navitabs">
+				<!-- 选择状态 class="emy-navitabs_active" -->
+				<li><a class="emy-navitabs_active" href="">地  图</a></li>
+				<li><a href="">查看[X]病历</a></li>
+				<!-- diable状态 class="emy-navitabs_disabled" -->
+				<li><a class="emy-navitabs_disabled" href="">查看[X]波形</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

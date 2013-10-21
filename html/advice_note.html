@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="subsystem-page" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>advice note</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+	<style type="text/css">
+		/*--reset css--*/
+		html, body, span, applet, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		a, abbr, acronym, address, big, cite, code,
+		del, dfn, em, img, ins, kbd, q, s, samp,
+		small, strike, strong, sub, sup, tt, var,
+		b, u, i, center,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td, textarea {
+		  margin: 0;
+		  padding: 0; }
+
+		ol, ul {
+		  list-style: none; }
+		a:focus {
+		  outline: thin dotted; }
+
+		a:active,
+		a:hover {
+		  outline: 0; }
+		table {
+		  border-collapse: collapse;
+		  border-spacing: 0; }
+
+		img {
+		  vertical-align: middle;
+		  border: 0;
+		  -ms-interpolation-mode: bicubic; }
+		html{
+			background: #fff;
+		}
+		.adwraper{
+			margin: 0 auto;
+			width: 840px;
+			font-size: 18px;
+			line-height: 1.7;
+		}
+		/*.adtable begin*/
+		.adtable{
+			width: 100%;
+			table-layout: fixed;
+		}
+		.adtable td{
+			word-wrap:break-word;
+		}
+		.adtable__lt{
+			text-align: left;
+		}
+		.adwraper__hd{
+			padding: 30px 0 15px;
+		}
+		.adwraper__hd h1{
+			font-size: 24px;
+			line-height: 1.5;
+		}
+		.adwraper__hd h2{
+			font-size: 32px;
+		}
+		.adwraper__p1{
+			text-indent: 2em;
+			padding-bottom: 5px;
+		}
+		.adwraper_pinfo{
+			padding-bottom: 5px;
+		}
+		.adwraper__p2{
+			padding-left: 40px;
+		}
+		.adwraper__p3{
+			padding-top: 70px;
+			text-indent: 2em;
+		}
+		.adwraper__p3 p,.adwraper__p4 p{
+			padding-bottom: 10px;
+		}
+		.adwraper__p4{
+			text-align: right;
+			padding-bottom: 60px;
+		}
+		.adwraper__input{
+			width: 150px;
+			border:0;
+			border-bottom: 1px solid #000;
+		}
+		.adwraper__stinput{
+			width: 50px;
+			border:0;
+			border-bottom: 1px solid #000;
+		}
+		/*.adtable end*/
+	</style>
+	<div class="adwraper">
+		<table class="adtable" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <th class="adwraper__hd">
+                    <h1>郑州大学第一附属医院急诊科</h1>
+                    <h2>急诊危重患者转运知情同意书</h2>
+                </th>
+            </tr>
+            <tr>
+                <td class="adwraper__p1"> 
+                    <p class="adwraper_pinfo"><tpl if="patient">
+                        患者<u>{patient.name}</u>，性别：<u>{patient.gender}</u>，年龄<u>{patient.age.value}{patient.age.unit}</u>，拟转运时间<u>{referralTime}</u>，当前临床诊断<u>{patient.diagnosis}</u>
+                	</tpl></p>
+                	<p>目前患者病情危重，需转运到<u>{toHospial}</u><u>{toDept}</u>科室继续检查治疗。在转运途中患者可能发生一些风险，造成患者身体不同程度的损害，严重者可能导致患者残疾甚至死亡，为使患者及家属充分知情并自愿选择，现将相关风险告知如下：</p>                       
+				</td>
+            </tr>
+            <tr>
+                <td class="adwraper__p2">
+                    <ol>
+                        <li>1：病情恶化；</li>
+                        <li:2：呼吸心跳骤停；</li>
+                        <li>3：坠床；</li>
+                        <li>4：各种管道滑落或堵塞；</li>
+                        <li>5：供养中断；</li>
+                        <li>6：病情变化，拟行的检查及治疗无法实现；</li>
+                        <li>7：其他难以预料或无法防范的不良后果；</li>
+                        <li>8：其他需提请患者及家属知情的特殊情况：（以下空白处无内容时需画斜线表示）</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td class="adwraper__p3">
+                    <p>以上文本由医院提供，医务人员已经详细告知了上述内容，我同意使用该文本。我已经知晓了上述内容，对医务人员详细告知的风险完全知情。</p>
+                    <p>经慎重考虑，我<input type="text" class="adwraper__input" />（要求）转运患者，并配合、协助医务人员完成各种抢救工作。</p>
+                    <p>经慎重考虑，我<input type="text" class="adwraper__input" />（拒绝）转运患者，因拒绝带来的一切后果由本人自行承担。</p>
+                    <p>（下划线处的内容由患者或法定代理人、委托代理人亲自填写）</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="adwraper__p4">
+                    <p>患者（或法定代理人）签字：<input type="text" class="adwraper__input" /></p>
+                    <p>或委托代理人签字：<input type="text" class="adwraper__input" /></p>
+                    <p>日期：<input type="text" class="adwraper__stinput" />年<input type="text" class="adwraper__stinput" />月<input type="text" class="adwraper__stinput" />日</p>
+                    <p>当前地址：<input type="text" class="adwraper__input" /></p>
+                </td>
+            </tr>
+        </table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@mixin all-retina-sprites($map, $map2x) {
+  @media (min--moz-device-pixel-ratio: 1.5),
+    (-o-min-device-pixel-ratio: 3/2),
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (min-device-pixel-ratio: 1.5),
+    (min-resolution: 1.5dppx) {
+ 
+    $base-class: sprite-map-name($map);
+ 
+    %#{$base-class}-all-retina-sprites {
+      background-image: sprite-url($map2x);
+     background-size:(ceil(image-width(sprite-path($map2x)) / 2) auto);
+    }
+ 
+    @each $sprite in sprite-names($map) {
+      .#{$sprite} {
+        @extend %#{$base-class}-all-retina-sprites;
+ 
+        $position: sprite-position($map2x, $sprite);
+        background-position: nth($position, 1) nth($position, 2) / 2;
+      }
+    }
+ 
+  }
+}
+
+$general-spacing: 1px;
+$general-sprite-dimensions: true;
+$general-sprites:sprite-map("dpr1/*.png");
+$general-retina-sprites:sprite-map("dpr2/*.png");
+%all-sprites {
+	display:inline-block;
+     background-image: sprite-url($general-sprites);
+ }
+ @each $sprite in sprite-names($general-sprites) {
+	$dimend:sprite-file($general-sprites, #{$sprite});
+	$width:image-width($dimend);
+	$height:image-height($dimend);
+   .#{$sprite} {
+     @extend %all-sprites;
+     $position: sprite-position($general-sprites, $sprite);
+     background-position: nth($position, 1) nth($position, 2);
+	 width:$width;
+	 height:$height;
+   }
+ }
+
+//@include all-general-sprites;
+ 
+$general-retina-spacing: 1px;
+$general-retina-sprite-dimensions: true;
+//@import "general-retina/*.png";
+//@include all-general-retina-sprites;
+ 
+@include all-retina-sprites($general-sprites, $general-retina-sprites);

@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="emy-subapp" xmlns="http://www.w3.org/1999/xhtml">n
+<head>
+    <title>远程应急调度系统-任务分配</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link href="css/substyle.css" rel="stylesheet" type="text/css" />
+    <script src="Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.nicescroll.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    	$(function(){
+    			//在带滚动条的div上实例化脚本,cursoropacitymin:设置成0鼠标移开会滚动条隐藏，cursorcolor是滚动条的颜色
+    			$("#js-remotecar").niceScroll({cursoropacitymin:1,cursorcolor:"#999"});
+
+    	});
+    </script>
+</head>
+<body>
+	<!-- 头部框架 -->
+	<div class="emy-pgheader fix">
+		<a href="#" class="emy-pgheader__log">车载急救系统</a>
+		<a href="" class="emy-bigcancel-btn"></a>
+	</div>
+	<div class="emy-mainwrap fix">
+		<!-- 左侧导航栏框架 -->
+		<div class="emy-sidebar fl" style="border-right: 8px solid #3495db;">
+			<div class="emy-sdmenu">
+				<h2 class="emy-sdmenu_title">功能菜单</h2>
+				<!-- 带图标 -->
+				<ul class="emy-sdmenu_lists emy-sdmenu_lists--withicon">
+					<li><a class="emy-sdmenu_resourceview" href="">资源总览</a></li>
+					<li><a class="emy-sdmenu_task emy-sdmenu__isactive" href="">任务分配</a></li>
+					<li><a class="emy-sdmenu_taskview emy-sdmenu__disabled" href="">任务总览</a></li>
+					<li><a class="emy-sdmenu_logout" href="">退出</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 右侧主内容框架 -->
+		<div class="suit emy-mainwrapper">
+			<ul class="emy-navitabs">
+				<!-- 选择状态 class="emy-navitabs_active" -->
+				<li><a class="emy-navitabs_active" href="">资源总览</a></li>
+				<li><a href="">任务分配</a></li>
+				<!-- diable状态 class="emy-navitabs_disabled" -->
+				<li><a class="emy-navitabs_disabled" href="">任务总览</a></li>
+			</ul>
+
+			<!-- 右侧框架内的内容 宽度要达到1184px 拷贝到你的框架中 -->
+			<div class="emy-remotewrapper" style="width:1184px;">
+				<div class="emy-staskacts">
+					<a href="" class="slbubtn">保 存</a><a href="" class="slbubtn">打 印</a>
+				</div>
+				<ul class="emy-remotegrid">
+					<!-- 第一列 -->
+					<li class="emy-remotegrid_cell">
+						<!-- 待命车辆 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--stall">
+							<div class="emy-popbox_hd">待命车辆<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd" style="height:145px;" id="js-remotecar">
+								<ul class="emy-roundlists">
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/sl_abulance_icon.png" alt="" class="emy-roundlists_car" />
+										<span class="emy-roundlists_info">08-01</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- 待命司机 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--stall">
+							<div class="emy-popbox_hd">待命司机<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd">
+								<ul class="emy-roundlists">
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- 待命担架工 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--dtall">
+							<div class="emy-popbox_hd">待命担架工<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd">
+								<ul class="emy-roundlists">
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li class="emy-remotegrid_cell">
+						<!-- 待命医生 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--stall">
+							<div class="emy-popbox_hd">待命医生<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd">
+								<ul class="emy-roundlists">
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<!--待命车辆  -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--htall">
+							<div class="emy-popbox_hd">待命车辆<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd">
+								<form class="emy-remserch" action="">
+									<div class="emy-remserch_line">
+										<label class="emy-remserch_tip" for="">联系人: </label>
+										<input class="emy-remserch_input" value="容嬷嬷" type="" />
+									</div>
+									<div class="emy-remserch_line">
+										<label class="emy-remserch_tip" for="">电  话：</label>
+										<input class="emy-remserch_input" value=" 188188888888"  type="" />
+									</div>
+									<div class="emy-remserch_line">
+										<label class="emy-remserch_tip" for="">目的地： </label>
+										<input class="emy-remserch_input" value=" 大石桥七天酒店401房间"  type="" />
+									</div>
+									<div class="emy-remserch_line">
+										<label class="emy-remserch_tip" for="">GPS坐标：</label>
+										<input class="emy-remserch_input" value=" 34.752332,113.673992"  type="" />
+									</div>
+								</form>
+								<ul class="emy-searacts">
+									<li><a class="emy-bigray-btn" href="">车 辆</a></li>
+									<li><a class="emy-bigray-btn" href="">医 生</a></li>
+									<li><a class="emy-bigray-btn" href="">护 士</a></li>
+									<li><a class="emy-bigray-btn" href="">司 机</a></li>
+									<li><a class="emy-bigray-btn" href="">担架工</a></li>
+									<li><a class="emy-bigray-btn" href="">担架工</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li class="emy-remotegrid_cell emy-remotegrid_cell--slong">
+						<!-- 待命护士 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--stall">
+							<div class="emy-popbox_hd">待命护士<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd">
+								<ul class="emy-roundlists">
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+									<li class="emy-roundlists_cell">
+										<img src="images/default_avatar.png" width="45" height="45" alt="" class="emy-roundlists_people" />
+										<span class="emy-roundlists_info">宋医生</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 地图 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--mtall">
+							<div class="emy-popbox_hd">地图</div>
+							<div class="emy-popbox_bd">
+								<div class="emy-remote-map1">
+								<!-- 实例化地图
+									高度226px
+								 -->
+								 </div>
+							</div>
+						</div>
+						<!-- 待处理转诊任务 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--ftall">
+							<div class="emy-popbox_hd">待处理转诊任务</div>
+							<div class="emy-popbox_bd">
+								
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

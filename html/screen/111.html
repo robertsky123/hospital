@@ -1,0 +1,131 @@
+<table id="tableContent1" cellpadding="0" cellspacing="0" class="table">
+                            <tr>
+                                <td colspan="3" style="background-image: url('Images/table1.png'); color: White;">
+                                    #{mission.patient.name}/#{mission.patient.gender.replace("性", "")}/#{mission.patient.age.value + mission.patient.age.unit}/ <span style="color: #ffff00">#{mission.record.conditionGrade}</span>
+
+                                    var conditionGrade = this["mission"].record.conditionGrade;
+                                    var count = conditionGrade == "轻" ? 1 : conditionGrade == "中" ? 2 : conditionGrade == "重" ? 3 : 0;
+
+                                    for(var i = 0; i < count; i++) {
+                                        <img src="Images/heart.png" style="vertical-align: middle;" />
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td style="width: 10%;">
+                                }
+                                else {
+                                    <td style="width: 20.2%;">
+                                }
+                                    事发地
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td>
+                                        #{mission.destinationAddress}
+                                    </td>
+                                    <td rowspan="8" style="background-color: Black; line-height: 55px; padding-left: 10px; text-indent: 0px; width: 15%;">
+                                        <span style="color: #ffff00;">RR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].RESP}</span></span>
+                                        <br />
+                                        <span style="color: #33cc00;">HR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].HR}</span></span>
+                                        <br />
+                                        <span style="color: #f93b08;">BP：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].NBP_SYS + "/" + mission.emergencyMonitorDatas[0].NBP_DIA}</span></span>
+                                        <br />
+                                        <span style="color: #00cccc;">SP0<sub>2</sub>：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].SPO2}</span></span>
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2">
+                                        #{mission.destinationAddress}
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    急救原因
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td>
+                                        #{mission.record.reasonType}
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2">
+                                        #{mission.record.reasonType}
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    脑卒中时间
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td>
+                                        脑卒中30分钟
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2">
+                                        脑卒中30分钟
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    分诊结果
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td style="color: #f93b08;">
+                                        <b>1级 抢救室</b>
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2" style="color: #f93b08;">
+                                        <b>1级 抢救室</b>                                       
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    司机
+                                </td>
+                                <td>
+                                    #{mission.driver.name}
+                                </td>
+                                if(this["mission"].patient.examinations.length > 0) {
+                                    <td rowspan="4" style="background-color: Black; line-height: 35px; padding-left: 10px; text-indent: 0px; width: 30%;">
+                                        <span style="color: #ffff00;">RR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].RESP}</span></span>
+                                        <br />
+                                        <span style="color: #33cc00;">HR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].HR}</span></span>
+                                        <br />
+                                        <span style="color: #f93b08;">BP：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].NBP_SYS + "/" + mission.emergencyMonitorDatas[0].NBP_DIA}</span></span>
+                                        <br />
+                                        <span style="color: #00cccc;">SP0<sub>2</sub>：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].SPO2}</span></span>
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    司机电话
+                                </td>
+                                <td>
+                                    #{mission.vehicle.carPhone}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    医生
+                                </td>
+                                <td>
+                                    #{mission.doctor.name}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    护士
+                                </td>
+                                <td>
+                                    #{mission.nurse.name}
+                                </td>
+                            </tr>
+                        </table>

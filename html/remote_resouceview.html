@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class="emy-subapp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>远程应急调度系统-资源总览</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link href="css/substyle.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<!-- 头部框架 -->
+	<div class="emy-pgheader fix">
+		<a href="#" class="emy-pgheader__log">车载急救系统</a>
+		<a href="" class="emy-bigcancel-btn"></a>
+	</div>
+	<div class="emy-mainwrap fix">
+		<!-- 左侧导航栏框架 -->
+		<div class="emy-sidebar fl" style="border-right: 8px solid #3495db;">
+			<div class="emy-sdmenu">
+				<h2 class="emy-sdmenu_title">功能菜单</h2>
+				<!-- 带图标 -->
+				<ul class="emy-sdmenu_lists emy-sdmenu_lists--withicon">
+					<li><a class="emy-sdmenu_resourceview" href="">资源总览</a></li>
+					<li><a class="emy-sdmenu_task emy-sdmenu__isactive" href="">任务分配</a></li>
+					<li><a class="emy-sdmenu_taskview emy-sdmenu__disabled" href="">任务总览</a></li>
+					<li><a class="emy-sdmenu_logout" href="">退出</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 右侧主内容框架 -->
+		<div class="suit emy-mainwrapper">
+			<ul class="emy-navitabs">
+				<!-- 选择状态 class="emy-navitabs_active" -->
+				<li><a class="emy-navitabs_active" href="">资源总览</a></li>
+				<li><a href="">任务分配</a></li>
+				<!-- diable状态 class="emy-navitabs_disabled" -->
+				<li><a class="emy-navitabs_disabled" href="">任务总览</a></li>
+			</ul>
+
+			<!-- 右侧框架内的内容 宽度要达到1184px 拷贝到你的框架中 -->
+			<div class="emy-remotewrapper" style="width:1184px;">
+				<div class="emy-staskacts">
+					<a href="" class="slbubtn">同步任务</a>
+				</div>
+				<ul class="emy-remotegrid">
+					<!-- 第一列 -->
+					<li class="emy-remotegrid_cell emy-remotegrid_cell--hmedia">
+						<!-- 待命车辆 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--rvcar">
+							<div class="emy-popbox_hd">待命车辆<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd" style="height:125px;">
+								<ul class="emy-mdiarlists">
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_carbox">
+											<div class="emy-mdiarlists_info1">
+												<img src="images/sl_abulance_icon.png" class="emy-mdiarlists_car" alt="" />
+												<div class="emy-mdiarlists_rinfo">
+													<p class="emy-mdiarlists_num">08-01</p>
+													<p class="emy-mdiarlists_area">豫A-30014</p>
+												</div>
+											</div>
+											<div class="emy-mdiarlists_info2">
+												<span class="emy-mdiarlists_phone">13813813888</span><span class="emy-mdiarlists_driver">吴大炮</span>
+											</div>
+										</div>
+									</li>
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_carbox">
+											<div class="emy-mdiarlists_info1">
+												<img src="images/sl_abulance_icon.png" class="emy-mdiarlists_car" alt="" />
+												<div class="emy-mdiarlists_rinfo">
+													<p class="emy-mdiarlists_num">08-01</p>
+													<p class="emy-mdiarlists_area">豫A-30014</p>
+												</div>
+											</div>
+											<div class="emy-mdiarlists_info2">
+												<span class="emy-mdiarlists_phone">13813813888</span><span class="emy-mdiarlists_driver">吴大炮</span>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- 待命人员 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--rvpeople">
+							<div class="emy-popbox_hd">待命人员<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd" style="height:430px;">
+								<ul class="emy-mdiarlists">
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_manbox">
+											<div class="emy-mdiarlists_avatar">
+												<img src="images/default_avatar.png" alt="" class="emy-mdiarlists_pimg" width="59" height="59" />
+												<p class="emy-mdiarlists_name">吴大炮           </p>
+											</div>
+											<div class="emy-mdiarlists_maninfo">
+												<p class="emy-mdiarlists_mnum">0002</p>
+												<p class="emy-mdiarlists_mran">amy</p>
+												<p class="emy-mdiarlists_post">管理员、医生</p>
+											</div>
+										</div>
+									</li>
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_manbox">
+											<div class="emy-mdiarlists_avatar">
+												<img src="images/default_avatar.png" alt="" class="emy-mdiarlists_pimg" width="59" height="59" />
+												<p class="emy-mdiarlists_name">吴大炮           </p>
+											</div>
+											<div class="emy-mdiarlists_maninfo">
+												<p class="emy-mdiarlists_mnum">0002</p>
+												<p class="emy-mdiarlists_mran">amy</p>
+												<p class="emy-mdiarlists_post">管理员、医生</p>
+											</div>
+										</div>
+									</li>
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_manbox">
+											<div class="emy-mdiarlists_avatar">
+												<img src="images/default_avatar.png" alt="" class="emy-mdiarlists_pimg" width="59" height="59" />
+												<p class="emy-mdiarlists_name">吴大炮           </p>
+											</div>
+											<div class="emy-mdiarlists_maninfo">
+												<p class="emy-mdiarlists_mnum">0002</p>
+												<p class="emy-mdiarlists_mran">amy</p>
+												<p class="emy-mdiarlists_post">管理员、医生</p>
+											</div>
+										</div>
+									</li>
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_manbox">
+											<div class="emy-mdiarlists_avatar">
+												<img src="images/default_avatar.png" alt="" class="emy-mdiarlists_pimg" width="59" height="59" />
+												<p class="emy-mdiarlists_name">吴大炮           </p>
+											</div>
+											<div class="emy-mdiarlists_maninfo">
+												<p class="emy-mdiarlists_mnum">0002</p>
+												<p class="emy-mdiarlists_mran">amy</p>
+												<p class="emy-mdiarlists_post">管理员、医生</p>
+											</div>
+										</div>
+									</li>
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_manbox">
+											<div class="emy-mdiarlists_avatar">
+												<img src="images/default_avatar.png" alt="" class="emy-mdiarlists_pimg" width="59" height="59" />
+												<p class="emy-mdiarlists_name">吴大炮           </p>
+											</div>
+											<div class="emy-mdiarlists_maninfo">
+												<p class="emy-mdiarlists_mnum">0002</p>
+												<p class="emy-mdiarlists_mran">amy</p>
+												<p class="emy-mdiarlists_post">管理员、医生</p>
+											</div>
+										</div>
+									</li>
+									<li class="emy-mdiarlists_cell">
+										<div class="emy-mdiarlists_manbox">
+											<div class="emy-mdiarlists_avatar">
+												<img src="images/default_avatar.png" alt="" class="emy-mdiarlists_pimg" width="59" height="59" />
+												<p class="emy-mdiarlists_name">吴大炮           </p>
+											</div>
+											<div class="emy-mdiarlists_maninfo">
+												<p class="emy-mdiarlists_mnum">0002</p>
+												<p class="emy-mdiarlists_mran">amy</p>
+												<p class="emy-mdiarlists_post">管理员、医生</p>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+
+					</li>
+					<!-- 第二列 -->
+					<li class="emy-remotegrid_cell emy-remotegrid_cell--hlong">
+						<!-- 待命车辆 -->
+						<div class="emy-popbox emy-popbox--small emy-popbox--rvtasking">
+							<div class="emy-popbox_hd">执行中任务<span class="emy-roundnumber">2</span></div>
+							<div class="emy-popbox_bd">
+								<div class="emy-rvtaskong-box">
+									<!-- 任务信息结构 开始-->
+									<div class="emy-cartaskinfo">
+										<div class="emy-cartaskinfo_user">
+											<div class="fix">
+												<div class="emy-cartaskinfo_avartar">
+													<img src="images/default_avatar.png" width="58" height="58" alt="" />
+													<p class="emy-cartaskinfo_name">无名氏 </p>
+												</div>
+												<div class="emy-cartaskinfo_linfo">
+													<p class="emy-cartaskinfo_mark">1000001</p>
+													<p class="emy-cartaskinfo_usernumber"> 13013013000</p>
+												</div>
+												<div class="emy-cartaskinfo_rinfo">
+													<p class="emy-cartaskinfo_state">赶往现场</p>
+													<p class="emy-cartaskinfo_timer">9月8日 9:36</p>
+												</div>
+											</div>
+											<p class="emy-cartaskinfo_address">二七区合作路8号 光明小区 1号楼 301室</p>
+										</div>
+										<div class="emy-cartaskinfo_rescuer">
+											<ul class="emy-cartaskinfo_lists fix">
+												<li class="emy-cartaskinfo_hlist emy-cartaskinfo_tlist">
+													<p class="emy-cartaskinfo_carnum">0002</p>
+												</li>
+												<li class="emy-cartaskinfo_tlist">
+													<p class="emy-cartaskinfo_carcard">豫A:1111</p>
+												</li>
+												<li class="emy-cartaskinfo_tlist">
+													<p class="emy-cartaskinfo_rescuephone">18101232131</p>	
+												</li>
+												<li  class="emy-cartaskinfo_hlist">
+													<p>司机:王权金 </p>
+												</li>
+												<li>
+													<p>医生:王权金</p>
+												</li>
+												<li>
+													<p>护士:王权金</p>
+												</li>
+												<li class="emy-cartaskinfo_hlist">
+													<p>担架工:王权金</p>
+												</li>
+												<li>
+													<p>担架工:王权金</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- 任务信息结构 结束-->
+									<!-- 任务信息结构 开始-->
+									<div class="emy-cartaskinfo">
+										<div class="emy-cartaskinfo_user">
+											<div class="fix">
+												<div class="emy-cartaskinfo_avartar">
+													<img src="images/default_avatar.png" width="58" height="58" alt="" />
+													<p class="emy-cartaskinfo_name">无名氏 </p>
+												</div>
+												<div class="emy-cartaskinfo_linfo">
+													<p class="emy-cartaskinfo_mark">1000001</p>
+													<p class="emy-cartaskinfo_usernumber"> 13013013000</p>
+												</div>
+												<div class="emy-cartaskinfo_rinfo">
+													<p class="emy-cartaskinfo_state">赶往现场</p>
+													<p class="emy-cartaskinfo_timer">9月8日 9:36</p>
+												</div>
+											</div>
+											<p class="emy-cartaskinfo_address">二七区合作路8号 光明小区 1号楼 301室</p>
+										</div>
+										<div class="emy-cartaskinfo_rescuer">
+											<ul class="emy-cartaskinfo_lists fix">
+												<li class="emy-cartaskinfo_hlist emy-cartaskinfo_tlist">
+													<p class="emy-cartaskinfo_carnum">0002</p>
+												</li>
+												<li class="emy-cartaskinfo_tlist">
+													<p class="emy-cartaskinfo_carcard">豫A:1111</p>
+												</li>
+												<li class="emy-cartaskinfo_tlist">
+													<p class="emy-cartaskinfo_rescuephone">18101232131</p>	
+												</li>
+												<li  class="emy-cartaskinfo_hlist">
+													<p>司机:王权金 </p>
+												</li>
+												<li>
+													<p>医生:王权金</p>
+												</li>
+												<li>
+													<p>护士:王权金</p>
+												</li>
+												<li class="emy-cartaskinfo_hlist">
+													<p>担架工:王权金</p>
+												</li>
+												<li>
+													<p>担架工:王权金</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- 任务信息结构 结束-->
+									<div class="emy-ltpagination">
+										<!-- 此处放翻页导航 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

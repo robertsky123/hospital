@@ -1,0 +1,430 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>郑大一附院急救信息大屏公告</title>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <link href="Styles/site.css" rel="stylesheet" type="text/css" />
+    <script src="../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="../Scripts/u.js" type="text/javascript"></script>
+    <script src="../Scripts/ace-template.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- <script type="text/javascript">
+
+        var _pageIndex = 1;
+        var _weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+
+        function ShowDateInfo() {
+            var time = new Date();
+
+            $("#spanDate").html(time.format("yyyy年MM月dd日") + _weeks[time.getDay()]);
+
+            $("#spanTime").html(time.format("hh:mm:ss"));
+        }
+
+        function LoadMissionData() {
+            $.ajax({
+                data: { "limit": 1, "page": _pageIndex },
+                dataType: "json",
+                type: "POST",
+                url: "/Mission/GetUnCompleteMissions",
+                beforeSend: function (req) {
+                },
+                error: function () {
+                    alert("加载数据失败，请稍候再试！");
+                },
+                success: function (responseText, statusText) {
+                    var mission = responseText.result.results[0];
+                    var content = AceTemplate.format("content", { mission: mission });
+
+                    $("#dvContent").html(content);
+
+                    $("#spanPageInfo").html("第" + responseText.result.page + "页 共" + responseText.result.pageCount + "页");
+
+                    if (_pageIndex < responseText.result.pageCount) {
+                        _pageIndex += 1;
+                    }
+                    else {
+                        _pageIndex = 1;
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            LoadMissionData();
+
+            setInterval(ShowDateInfo, 1000);
+
+            setInterval(LoadMissionData, 8000);
+        });
+    
+    </script> -->
+	<script type="text/javascript">
+
+        var _pageIndex = 1;
+        var _weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+
+        function ShowDateInfo() {
+            var time = new Date();
+
+            $("#spanDate").html(time.format("yyyy年MM月dd日") + _weeks[time.getDay()]);
+
+            $("#spanTime").html(time.format("hh:mm:ss"));
+        }
+
+        function LoadMissionData() {
+					var responseText={"success":true,"result":{"limit":1,"page":6,"start":5,"sorters":[],"filters":[],"total":9,"pageCount":9,"results":[{"id":12121,"destinationAddress":"大石桥","contactPhone":"18788990909","contact":"钱书","x":40.633970,"y":122.505890,"missionGenerateTime":"2013年08月13日 09:11:38","acceptMissionTime":"2013年08月14日 08:48:35","startTime":"2013年08月13日 09:08:38","arrivedSceneTime":"2013年08月13日 09:35:40","arrivedPatientTime":"2013年08月13日 09:40:05","leftSceneTime":"2013年08月13日 09:59:35","status":"回院途中","type":"自出任务","completeStatus":"未完成","hospital":{"id":1,"status":"启用","createTime":"0001年01月01日 12:00:00"},"hospitalId":1,"vehicle":{"id":22,"code":"08-02","plateNumber":"豫A-30002","carPhone":"13814800002","status":"回院途中","hospital":{"id":1,"status":"启用","createTime":"0001年01月01日 12:00:00"},"hospitalId":1,"equipments":[],"missions":[],"createTime":"2013年05月11日 06:27:37","createBy":"admin","updateTime":"2013年05月15日 04:53:00","modifiedBy":"admin"},"doctor":{"id":11221,"name":"d21","trueName":"马伟","status":"任务中","createTime":"2013年08月13日 05:12:51","createBy":"admin","hospital":{"id":1,"status":"启用","createTime":"0001年01月01日 12:00:00"},"hospitalId":1,"userRoles":[]},"nurse":{"id":11217,"name":"n26","trueName":"李晓璐","status":"任务中","createTime":"2013年08月13日 05:05:35","createBy":"admin","hospital":{"id":1,"status":"启用","createTime":"0001年01月01日 12:00:00"},"hospitalId":1,"userRoles":[]},"driver":{"id":11233,"name":"sj24","trueName":"李顺","status":"任务中","createTime":"2013年08月13日 05:31:12","createBy":"admin","hospital":{"id":1,"status":"启用","createTime":"0001年01月01日 12:00:00"},"hospitalId":1,"userRoles":[]},"isCompleted":false,"patient":{"id":12931,"name":"吕斌","gender":"男性","age":{"value":68,"unit":"岁"},"nation":"汉族","state":"中国","status":"启用","createTime":"2013年08月14日 08:48:35","createBy":"d21","examinations":[]},"orders":[],"record":{"id":12121,"address":"大石桥丹尼斯正门","contactNumber":"18788990909","sceneType":"公共场所","reasonType":"疾病","conditionGrade":"中","coordinateDegree":"合作","diseaseType":"外伤","diseaseCategory":"外伤","sentLocationType":"本院","treatmentResult":"稳定","chiefComplaint":"突然晕厥并小便失禁20分钟","presentIllness":"患者于20分钟前五明显诱因突然晕厥，并小便失禁，商场保安人员发现后拨打120","diagnosis":"脑血管意外？","createTime":"2013年08月14日 08:48:35","createBy":"d21","status":"启用","isCerebralApoplexy":false},"inspection":{"id":12121,"isBloodGlucose":true,"examinationResult":"10.5mol/l","T":38.0,"pulse":73,"RR":19,"SBP":53,"DBP":96,"situation":"尚可","mind":"模糊","pupil":{"leftSize":2,"rightSize":2,"response":"存在"},"chest":"未见yi","heart":"心音低钝无力","abdomen":"平软","spine":"未见异常","neck":"面色苍白，大汗，颈软无抵抗","lungs":"双肺呼吸音清","status":"启用"},"treatments":[],"informedConsent":{"id":12121,"hospital":"郑大一附院","relationship":"陌生人","informedConsentItems":[],"status":"启用"},"emergencyMonitorDatas":[{"timePoint":"2013年08月16日 10:14:30","monitorId":4013,"HR":60.0,"PLUES":60.0,"RESP":20.0,"SPO2":98.0,"NBP_SYS":108.0,"NBP_DIA":70.0,"NBP_MAP":84.0}]}]}};
+                    var mission = responseText.result.results[0];
+                    var content = AceTemplate.format("content", { mission: mission });
+
+                    $("#dvContent").html(content);
+
+                    $("#spanPageInfo").html("第" + responseText.result.page + "页 共" + responseText.result.pageCount + "页");
+
+                    if (_pageIndex < responseText.result.pageCount) {
+                        _pageIndex += 1;
+                    }
+                    else {
+                        _pageIndex = 1;
+                    }
+                
+        }
+
+        $(document).ready(function () {
+            LoadMissionData();
+
+            setInterval(ShowDateInfo, 1000);
+        });
+    
+    </script>
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr style="height: 78px; background-image: url('Images/top1.png');">
+            <td style="width: 40px;">
+            </td>
+            <td style="background-image: url('Images/top2.png'); background-repeat: no-repeat;
+                width: 4%;">
+            </td>
+            <td align="center" style="background-image: url('Images/top3.png'); color: White;
+                font-size: 28pt; font-weight: bolder; width: 37%;">
+                郑大一附院急救信息大屏公告
+            </td>
+            <td style="background-image: url('Images/top4.png'); background-repeat: no-repeat;
+                width: 5%;">
+            </td>
+            <td align="center" style="font-size: 18pt;">
+                <span id="spanDate"></span>
+            </td>
+            <td style="background-image: url('Images/clock2.png'); background-position: 0 center;
+                background-repeat:no-repeat; width:79px;">
+            </td>
+            <td style="background-image: url('Images/top_time2.png'); background-position: center;
+                background-repeat: repeat-x; color: White; font-size: 22pt; font-weight: bold;
+                width: 10%;">
+                <span id="spanTime"></span>
+            </td>
+        </tr>
+    </table>
+    <div id="dvContent" style="height: 100%;">
+        <script id="content" type="text/template">
+        
+            <table cellpadding="0" cellspacing="0" style="border: 10px solid #26a9e0; margin-top: 3px;
+                width: 100%;">
+                <tr>
+                    <td colspan="2" style="padding: 0px 5px 0px 5px;">
+                        <table cellpadding="0" cellspacing="0" width="100%">
+                            <tr style="height: 100px;">
+                                <td style="background-image: url('Images/hospital.png'); background-position: center;
+                                    background-repeat: no-repeat; width: 50px;">
+                                </td>
+                                <td style="background-image: url('Images/flow1.png'); background-position: center;
+                                    background-repeat: no-repeat; width: 17px;">
+                                </td>
+                                <td style="background-image: url('Images/flow2.png'); background-position: center;
+                                    background-repeat: repeat-x;">
+                                        if(this["mission"].status == "赶往现场") {
+                                            <div style="background-image: url('Images/ambulance.png'); background-position: center; background-repeat: no-repeat; color: #0099ff; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        else {
+                                            <div style="background-image: url('Images/1.png'); background-position: center; background-repeat: no-repeat; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        赶往现场
+                                        if(this["mission"].status == "赶往现场") {
+                                            <div style="padding-top: 52px;">
+                                                #{mission.vehicle.code}车
+                                            </div>
+                                        }
+                                    </div>
+                                </td>
+                                <td style="background-image: url('Images/flow2.png'); background-position: center;
+                                    background-repeat: repeat-x;">
+                                </td>
+                                <td style="background-image: url('Images/flow2.png'); background-position: center;
+                                    background-repeat: repeat-x;">
+                                        if(this["mission"].status == "到达现场" || this["mission"].status == "现场救治") {
+                                            <div style="background-image: url('Images/ambulance.png'); background-position: center;
+                                                background-repeat: no-repeat; color: #0099ff; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        else {
+                                            <div style="background-image: url('Images/2.png'); background-position: center;
+                                                background-repeat: no-repeat; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        到达现场（现场救治）
+                                        if(this["mission"].status == "到达现场" || this["mission"].status == "现场救治") {
+                                            <div style="padding-top: 52px;">
+                                                #{mission.vehicle.code}车
+                                            </div>
+                                        }
+                                    </div>
+                                </td>
+                                <td style="background-image: url('Images/flow2.png'); background-position: center;
+                                    background-repeat: repeat-x;">
+                                </td>
+                                <td style="background-image: url('Images/flow2.png'); background-position: center;
+                                    background-repeat: repeat-x;">
+                                        if(this["mission"].status == "回院途中") {
+                                            <div style="background-image: url('Images/ambulance.png'); background-position: center; background-repeat: no-repeat; color: #0099ff; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        else {
+                                            <div style="background-image: url('Images/3.png'); background-position: center; background-repeat: no-repeat; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        回院途中
+                                        if(this["mission"].status == "回院途中") {
+                                            <div style="padding-top: 52px;">
+                                                #{mission.vehicle.code}车
+                                            </div>
+                                        }
+                                    </div>
+                                </td>
+                                <td style="background-image: url('Images/flow2.png'); background-position: center;
+                                    background-repeat: repeat-x;">
+                                </td>
+                                <td style="background-image: url('Images/flow2.png'); background-position: center;
+                                    background-repeat: repeat-x;">
+                                        if(this["mission"].status == "到达医院") {
+                                            <div style="background-image: url('Images/ambulance.png'); background-position: center; background-repeat: no-repeat; color: #0099ff; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        else {
+                                            <div style="background-image: url('Images/4.png'); background-position: center; background-repeat: no-repeat; font-size: 14pt; font-weight: bold; height: 105px; text-align: center; width: 100%;">
+                                        }
+                                        到达医院
+                                        if(this["mission"].status == "到达医院") {
+                                            <div style="padding-top: 52px;">
+                                                #{mission.vehicle.code}车
+                                            </div>
+                                        }
+                                    </div>
+                                </td>
+                                <td style="background-image: url('Images/flow3.png'); background-position: center;
+                                    background-repeat: no-repeat; width: 18px;">
+                                </td>
+                                <td style="background-image: url('Images/hospital.png'); background-position: center;
+                                    background-repeat: no-repeat; width: 50px;">
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                        if(this["mission"].patient.examinations.length == 0) {
+                            <td style="padding: 0px 5px 5px 5px;">
+                        }
+                        else {
+                            <td style="padding: 0px 0px 5px 5px; width: 50%;" valign="top">
+                        }
+                        <table id="tableContent1" cellpadding="0" cellspacing="0" class="table">
+                            <tr>
+                                <td colspan="3" style="background-image: url('Images/table1.png'); color: White;">
+                                    #{mission.patient.name}/#{mission.patient.gender.replace("性", "")}/#{mission.patient.age.value + mission.patient.age.unit}/ <span style="color: #ffff00">#{mission.record.conditionGrade}</span>
+
+                                    var conditionGrade = this["mission"].record.conditionGrade;
+                                    var count = conditionGrade == "轻" ? 1 : conditionGrade == "中" ? 2 : conditionGrade == "重" ? 3 : 0;
+
+                                    for(var i = 0; i < count; i++) {
+                                        <img src="Images/heart.png" style="vertical-align: middle;" />
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td style="width: 10%;">
+                                }
+                                else {
+                                    <td style="width: 20.2%;">
+                                }
+                                    事发地
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td>
+                                        #{mission.destinationAddress}
+                                    </td>
+                                    <td rowspan="8" style="background-color: Black; line-height: 55px; padding-left: 10px; text-indent: 0px; width: 15%;">
+                                        <span style="color: #ffff00;">RR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].RESP}</span></span>
+                                        <br />
+                                        <span style="color: #33cc00;">HR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].HR}</span></span>
+                                        <br />
+                                        <span style="color: #f93b08;">BP：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].NBP_SYS + "/" + mission.emergencyMonitorDatas[0].NBP_DIA}</span></span>
+                                        <br />
+                                        <span style="color: #00cccc;">SP0<sub>2</sub>：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].SPO2}</span></span>
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2">
+                                        #{mission.destinationAddress}
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    急救原因
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td>
+                                        #{mission.record.reasonType}
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2">
+                                        #{mission.record.reasonType}
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    脑卒中时间
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td>
+                                        脑卒中30分钟
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2">
+                                        脑卒中30分钟
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    分诊结果
+                                </td>
+                                if(this["mission"].patient.examinations.length == 0) {
+                                    <td style="color: #f93b08;">
+                                        <b>1级 抢救室</b>
+                                    </td>
+                                }
+                                else {
+                                    <td colspan="2" style="color: #f93b08;">
+                                        <b>1级 抢救室</b>                                       
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    司机
+                                </td>
+                                <td>
+                                    #{mission.driver.name}
+                                </td>
+                                if(this["mission"].patient.examinations.length > 0) {
+                                    <td rowspan="4" style="background-color: Black; line-height: 35px; padding-left: 10px; text-indent: 0px; width: 30%;">
+                                        <span style="color: #ffff00;">RR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].RESP}</span></span>
+                                        <br />
+                                        <span style="color: #33cc00;">HR：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].HR}</span></span>
+                                        <br />
+                                        <span style="color: #f93b08;">BP：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].NBP_SYS + "/" + mission.emergencyMonitorDatas[0].NBP_DIA}</span></span>
+                                        <br />
+                                        <span style="color: #00cccc;">SP0<sub>2</sub>：<span style="font-size: 18pt;">#{mission.emergencyMonitorDatas[0].SPO2}</span></span>
+                                    </td>
+                                }
+                            </tr>
+                            <tr>
+                                <td>
+                                    司机电话
+                                </td>
+                                <td>
+                                    #{mission.vehicle.carPhone}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    医生
+                                </td>
+                                <td>
+                                    #{mission.doctor.name}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    护士
+                                </td>
+                                <td>
+                                    #{mission.nurse.name}
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    if(this["mission"].patient.examinations.length > 0) {
+                        <td style="padding: 0px 5px 5px 5px;" valign="top">
+                            <table id="tableContent2" cellpadding="0" cellspacing="0" class="table" style="text-indent: 0px;">
+                                <tr style="background-image: url('Images/table1.png'); color: White;">
+                                    <td align="center" style="width: 50%;">
+                                        检验（检查）项目
+                                    </td>
+                                    <td align="center" style="width: 20%;">
+                                        状态
+                                    </td>
+                                    <td align="center" style="width: 30%;">
+                                        部位/样本
+                                    </td>
+                                </tr>
+                                for(var i = 0; i < this["mission"].patient.examinations.length; i++) {
+                                    var examination = this["mission"].patient.examinations[i];
+
+                                    <tr>
+                                        <td style="text-indent: 15px;" nowrap="nowrap">
+                                            #{examination.name}
+                                        </td>
+                                        <td align="center">
+                                            #{examination.status}
+                                        </td>
+                                        <td align="center">
+                                            #{examination.bodyPart ? examination.bodyPart : examination.specimen ? examination.specimen : ""}
+                                        </td>
+                                    </tr>
+                                }
+
+                                for(var i = 0; i < 8 - this["mission"].patient.examinations.length; i++) {
+                                    <tr>
+                                        <td style="text-indent: 15px;" nowrap="nowrap">
+                                           &nbsp;
+                                        </td>
+                                        <td align="center">
+                                            
+                                        </td>
+                                        <td align="center">
+                        
+                                        </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    }
+                </tr>
+            </table>
+
+        </script>
+    </div>
+    <table id="tablePage" cellpadding="0" cellspacing="0" style="margin-top: 3px; width: 100%;">
+        <tr>
+            <td align="center" style="background-image: url('Images/bottom.png'); color: White;
+                font-size: 16pt; font-weight: bold; padding: 10px 0px 10px 0px;">
+                <span id="spanPageInfo"></span>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
